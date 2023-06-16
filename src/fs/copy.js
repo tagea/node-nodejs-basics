@@ -10,7 +10,7 @@ const copy = async () => {
 
     const error = new Error('FS operation failed');
 
-    if (fs.existsSync(copyFolderPath)) {
+    if (fs.existsSync(copyFolderPath) || !fs.existsSync(folderPath)) {
         throw error;
     } else if (fs.existsSync(folderPath)) {
         fs.cp(folderPath, copyFolderPath, { recursive: true }, (err) => {

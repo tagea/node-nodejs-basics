@@ -14,7 +14,7 @@ const create = async () => {
     if (fs.existsSync(fullFilePath)) {
         throw error;
     } else {
-        fs.writeFileSync(__dirname + '/files/fresh.txt', content, (err) => {
+        fs.writeFileSync(fullFilePath, content, (err) => {
             if (err) throw error;
         });
     }
