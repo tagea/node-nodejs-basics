@@ -1,19 +1,16 @@
 import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { getFilePath } from './get_path.js';
 
 const rename = async () => {
-    const __filename = fileURLToPath(import.meta.url);
-    const __dirname = path.dirname(__filename);
-    const fullFileToRenamePath = __dirname + '/files/wrongFilename.txt';
-    const fullFileTargetPath = __dirname + '/files/properFilename.md';
+    const fileToRename = getFilePath('files', 'wrongFilename.txt');
+    const fileTarget = getFilePath('files', 'properFilename.txt');
 
     const error = new Error('FS operation failed');
 
-    if (!fs.existsSync(fullFileToRenamePath) || fs.existsSync(fullFileTargetPath)) {
+    if (!fs.existsSync(fileToRename) || fs.existsSync(fileTarget)) {
         throw error;
     } else {
-        fs.rename(fullFileToRenamePath, fullFileTargetPath, (err) => {
+        fs.rename(fileToRename, fileTarget, (err) => {
             if (err) throw error;
         });
     }
