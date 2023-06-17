@@ -1,20 +1,18 @@
 import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { getFilePath } from './get_path.js';
+import { getErrors } from '../errors.js';
 
 const create = async () => {
-    const __filename = fileURLToPath(import.meta.url);
-    const __dirname = path.dirname(__filename);
-    const fullFilePath = __dirname + '/files/fresh.txt';
+    const fileName = getFilePath('files', 'fresh.txt');
 
     const content = 'I am fresh and young';
 
-    const error = new Error('FS operation failed');
+    const error = getErrors('file');
 
-    if (fs.existsSync(fullFilePath)) {
+    if (fs.existsSync(fileName)) {
         throw error;
     } else {
-        fs.writeFileSync(fullFilePath, content, (err) => {
+        fs.writeFileSync(fileName, content, (err) => {
             if (err) throw error;
         });
     }

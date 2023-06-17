@@ -1,10 +1,11 @@
 import fs from 'fs';
 import { getFolderName } from './get_path.js';
+import { getErrors } from '../errors.js';
 
 const list = async () => {
     const folder = getFolderName('files');
 
-    const error = new Error('FS operation failed');
+    const error = getErrors('file');
 
     if (!fs.existsSync(folder)) {
         throw error;

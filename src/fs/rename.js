@@ -1,11 +1,12 @@
 import fs from 'fs';
 import { getFilePath } from './get_path.js';
+import { getErrors } from '../errors.js';
 
 const rename = async () => {
     const fileToRename = getFilePath('files', 'wrongFilename.txt');
     const fileTarget = getFilePath('files', 'properFilename.txt');
 
-    const error = new Error('FS operation failed');
+    const error = getErrors('file');
 
     if (!fs.existsSync(fileToRename) || fs.existsSync(fileTarget)) {
         throw error;
