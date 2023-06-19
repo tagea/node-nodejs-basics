@@ -1,10 +1,10 @@
 import fs from 'fs';
-import { getFilePath } from './utility/get_path.js';
+import { getFilePath } from '../utility/get_path.js';
 import { getErrors } from '../utility/errors.js';
 
 const rename = async () => {
-    const fileToRename = getFilePath('files', 'wrongFilename.txt');
-    const fileTarget = getFilePath('files', 'properFilename.txt');
+    const fileToRename = getFilePath('files', 'wrongFilename.txt', import.meta.url);
+    const fileTarget = getFilePath('files', 'properFilename.txt', import.meta.url);
 
     const error = getErrors('file');
 

@@ -1,10 +1,10 @@
 import fs from 'fs';
-import { getFolderName } from './utility/get_path.js';
+import { getFolderName } from '../utility/get_path.js';
 import { getErrors } from '../utility/errors.js';
 
 const copy = async () => {
-    const folder = getFolderName('files');
-    const copyFolder = getFolderName('files_copy');
+    const folder = getFolderName('files', import.meta.url);
+    const copyFolder = getFolderName('files_copy', import.meta.url);
 
     const error = getErrors('file');
 

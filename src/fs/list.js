@@ -1,9 +1,9 @@
 import fs from 'fs';
-import { getFolderName } from './utility/get_path.js';
+import { getFolderName } from '../utility/get_path.js';
 import { getErrors } from '../utility/errors.js';
 
 const list = async () => {
-    const folder = getFolderName('files');
+    const folder = getFolderName('files', import.meta.url);
 
     const error = getErrors('file');
 

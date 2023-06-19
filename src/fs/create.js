@@ -1,9 +1,9 @@
 import fs from 'fs';
-import { getFilePath } from './utility/get_path.js';
+import { getFilePath } from '../utility/get_path.js';
 import { getErrors } from '../utility/errors.js';
 
 const create = async () => {
-    const fileName = getFilePath('files', 'fresh.txt');
+    const fileName = getFilePath('files', 'fresh.txt', import.meta.url);
 
     const content = 'I am fresh and young';
 

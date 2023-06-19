@@ -1,9 +1,9 @@
 import fs from 'fs';
-import { getFilePath } from './utility/get_path.js';
+import { getFilePath } from '../utility/get_path.js';
 import { getErrors } from '../utility/errors.js';
 
 const remove = async () => {
-    const fileName = getFilePath('files', 'fileToRemove.txt');
+    const fileName = getFilePath('files', 'fileToRemove.txt', import.meta.url);
 
     const error = getErrors('file');
 
