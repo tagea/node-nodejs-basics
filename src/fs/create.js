@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { getFilePath } from './utility/get_path.js';
-import { getErrors } from '../errors.js';
+import { getErrors } from '../utility/errors.js';
 
 const create = async () => {
     const fileName = getFilePath('files', 'fresh.txt');
