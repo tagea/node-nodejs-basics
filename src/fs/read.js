@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { getFilePath } from './get_path.js';
+import { getFilePath } from './utility/get_path.js';
 import { getErrors } from '../errors.js';
 
 const read = async () => {

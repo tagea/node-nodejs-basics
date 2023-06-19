@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { getFolderName } from './get_path.js';
+import { getFolderName } from './utility/get_path.js';
 import { getErrors } from '../errors.js';
 
 const list = async () => {
